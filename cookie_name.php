@@ -1,7 +1,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     $user_name = $_POST['benutzername']; //hier wird name="benutzername" gebraucht!
-    //setcookie('username', $user_name, time()+3600);
+    setcookie('username', $user_name, time()+3600);
 echo $user_name;
 };
 
