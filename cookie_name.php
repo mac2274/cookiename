@@ -2,16 +2,14 @@
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     $user_name = $_POST['benutzername']; //hier wird name="benutzername" gebraucht!
     setcookie('username', $user_name, time()+3600);
-echo $user_name;
+#echo $user_name;
 };
-
-
 
 if (isset($_COOKIE['username'])){
     echo "<p>Willkommen rurück, <strong>" . htmlspecialchars($_COOKIE['username']). "</strong>!</p>";
 };
 
-setcookie("username","",-1);
+#setcookie("username","",-1);
 
 //var_dump($_COOKIE);
 ?>
