@@ -1,6 +1,13 @@
 <?php 
 //Aufgabe aus der DBE-Seite
-if (isset($_COOKIE["name"])) {}
+if (isset($_POST["submit"])) {
+    $name = $_POST['name'];
+
+    setcookie('username', $name, time() +3600);
+
+    header('index.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
