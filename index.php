@@ -1,6 +1,6 @@
 <?php 
 //Aufgabe aus der DBE-Seite
-
+if (isset($_COOKIE["name"])) {}
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +11,10 @@
     <title>Cookie setzen und Namen aufrufen</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="index.php" method="POST">
         <label for="name">Name: </label>
         <input type="text" name="name" id="">
-        <input type="submit" value="">
+        <input type="submit" value="Senden">
     </form>
 </body>
 </html>
