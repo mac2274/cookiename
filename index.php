@@ -8,27 +8,30 @@
 <body>
 <?php 
 //Aufgabe aus der DBE-Seite
+
+//hier prüfen ob Formular abgeschickt ist
 if (isset($_POST["submit"])) {
     $name = $_POST['name'];
 
-    setcookie('username', $name, time() +3600);
+    //cookie setzen
+    setcookie('name', $name, time() +3600);
 
-    header('location: index.php');
+    //Weiterleitung zur aktuellen Seite
+    header("location: index.php"); //aber wieso php_self? // und wenn action="" dann index.php? 
     exit;
 }
 
-if (isset($_COOKIE['username'])){
-    $username = $_COOKIE['username'];
+if (isset($_COOKIE['name'])){
+    $name = $_COOKIE['name'];
 
-    echo "<h1>Hallo, $username !</h1>";
+    echo "<h1>Hallo, $name !</h1>";
 }
 ?>
 
-
-    <form action="index.php" method="POST">
+    <form action="" method="POST">
         <label for="name">Name: </label>
         <input type="text" name="name" id="">
-        <input type="submit" value="Senden">
+        <input type="submit" name="submit" value="Senden"><!--name="submit" ist wichtig!!-->
     </form>
 </body>
 </html>
